@@ -1,8 +1,80 @@
 // class to represent an emplayee - inherits Person
+import java.util.ArrayList;
 public class Employee extends Person
 {
   private double hourlyWage;
   private int hoursWorked;
   private String jobTitle;
   private Manager manager=new Manager();
-  public Employee(String s1,String s2,int a,double wage,
+  public Employee(String s1,String s2,int a,double wage,int hours,String job)
+  {
+    super.Person(s1,s2,a);
+    hourlyWage=wage;
+    hoursWorked=hours;
+    jobTitle=job;
+  }
+  public double getWage()
+  {
+    return hourlyWage;
+  }
+  public int getHours;
+  {
+    return horsWorked;
+  }
+  public double getWeeklySalary()
+  {
+    double weeklySalary=hourlyWage*hoursWorked*7;
+    return weeklySalary;
+  }
+  public double getYearlySalary()
+  {
+    return getWeeklySalary()*52;
+  }
+  public String getJobTitle()
+  {
+    return jobTitle;
+  }
+  public String toString()
+  {
+    return super.toString()+jobTitle+" @ "+getYearlySalary;
+  }
+  public String getManager()
+  {
+    return "Manager: "+lastName+", "+firstname;
+  }
+  public void setWage(double newWage)
+  {
+    hourlyWage=newWage;
+  }
+  public void setHours(int h)
+  {
+    hoursWorked=h;
+  }
+  public void setjobTitle(String title)
+  {
+    jobTitle=title;
+  }
+  public void giveRaise()
+  {
+    hourlyWage++;
+  }
+  public void setManager(Manager newManager)
+  {
+    if(manager!=null)
+    {
+      Manager.getDirectReports().add(manager);
+    }
+    manager=newManager;
+    Manager.getDirectReports().add(manager);
+  }
+}
+
+
+
+
+
+
+  
+  
+  
+  
