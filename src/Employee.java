@@ -1,14 +1,13 @@
 // class to represent an emplayee - inherits Person
-import java.util.ArrayList;
 public class Employee extends Person
 {
   private double hourlyWage;
   private int hoursWorked;
   private String jobTitle;
-  private Manager manager=new Manager();
+  private Manager manager;
   public Employee(String s1,String s2,int a,double wage,int hours,String job)
   {
-    super.Person(s1,s2,a);
+    super(s1,s2,a);
     hourlyWage=wage;
     hoursWorked=hours;
     jobTitle=job;
@@ -17,9 +16,9 @@ public class Employee extends Person
   {
     return hourlyWage;
   }
-  public int getHours;
+  public int getHours()
   {
-    return horsWorked;
+    return hoursWorked;
   }
   public double getWeeklySalary()
   {
@@ -36,11 +35,11 @@ public class Employee extends Person
   }
   public String toString()
   {
-    return super.toString()+jobTitle+" @ "+getYearlySalary;
+    return super.toString()+": "+jobTitle+" @ $"+getYearlySalary();
   }
   public String getManager()
   {
-    return "Manager: "+lastName+", "+firstname;
+    return "Manager: "+getLastName()+", "+getFirstName();
   }
   public void setWage(double newWage)
   {
@@ -60,12 +59,7 @@ public class Employee extends Person
   }
   public void setManager(Manager newManager)
   {
-    if(manager!=null)
-    {
-      Manager.getDirectReports().add(manager);
-    }
     manager=newManager;
-    Manager.getDirectReports().add(manager);
   }
 }
 
