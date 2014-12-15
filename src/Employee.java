@@ -12,6 +12,12 @@ public class Employee extends Person
     hoursWorked=hours;
     jobTitle=job;
   }
+  /*public boolean equals(Object obj)///////////////////////////////////////////////////////////////////////////////
+  {
+    if(obj instanceof Employee)
+    {
+      Employee other=obj;
+      return */
   public double getWage()
   {
     return hourlyWage;
@@ -59,6 +65,10 @@ public class Employee extends Person
   }
   public void setManager(Manager newManager)
   {
+    /*if(manager!=null)
+    {
+      manager.directReport.add(this);
+    }*/
     manager=newManager;
   }
 }
