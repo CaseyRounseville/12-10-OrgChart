@@ -14,10 +14,28 @@ public class OrgChart
     employee1.setManager(manager1);
     employee2.setManager(manager1);
     employee3.setManager(manager2);
-    System.out.println(manager1.toString());
+    /*System.out.println(manager1.toString());
     System.out.println("    "+employee1.toString());
     System.out.println("    "+employee2.toString());
     System.out.println(manager2.toString());
-    System.out.println("    "+employee3.toString());
+    System.out.println("    "+employee3.toString());*/
+    printInfo(manager1);
+    printInfo(employee1);
+    printInfo(employee2);
+    printInfo(manager2);
+    printInfo(employee3);
   }
-}
+    public static void printInfo(Person p)
+    {
+      if(p instanceof Manager)
+      {
+        Manager other=(Manager)p;
+        System.out.println(other.toString());
+      }
+      if(p instanceof Employee)
+      {
+        Employee other=(Employee)p;
+        System.out.println("    "+p.toString());
+      }
+    }
+  }
