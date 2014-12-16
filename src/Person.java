@@ -16,7 +16,7 @@ public class Person
     lastName=s2;
     age=a;
   }
-  public boolean equals(Object obj)/////////////////////////////////////////////////////////////////////////////////////////
+  public boolean equals(Object obj)
   {
     if(obj instanceof Person)
     {
