@@ -12,12 +12,15 @@ public class Employee extends Person
     hoursWorked=hours;
     jobTitle=job;
   }
-  /*public boolean equals(Object obj)///////////////////////////////////////////////////////////////////////////////
+  public boolean equals(Object obj)
   {
     if(obj instanceof Employee)
     {
-      Employee other=obj;
-      return */
+      Employee other=(Employee)obj;
+      return super.equals(other)&&this.hourlyWage==other.hourlyWage&&this.hoursWorked==other.hoursWorked&&this.jobTitle==other.jobTitle&&this.manager==other.manager;
+    }
+    return false;
+  }
   public double getWage()
   {
     return hourlyWage;
@@ -65,10 +68,10 @@ public class Employee extends Person
   }
   public void setManager(Manager newManager)
   {
-    /*if(manager!=null)
+    if(manager!=null)
     {
-      manager.directReport.add(this);
-    }*/
+      manager.getDirectReports().add(this);
+    }
     manager=newManager;
   }
 }
