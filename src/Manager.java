@@ -9,6 +9,15 @@ public class Manager extends Employee
     super(s1,s2,a,wage,hours,job);
     department=dept;
   }
+  public boolean equals(Object obj)
+  {
+    if(obj instanceof Manager)
+    {
+      Manager other=(Manager)obj;
+      return super.equals(other)&&this.directReport==other.directReport&&this.department==other.department;
+    }
+    return false;
+  }
   public String getDepartment()
   {
     return department;
