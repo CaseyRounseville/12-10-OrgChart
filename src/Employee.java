@@ -70,9 +70,10 @@ public class Employee extends Person
   {
     if(manager!=null)
     {
-      manager.getDirectReports().add(this);
+      manager.removeDirectReport(this);
     }
     manager=newManager;
+    manager.addDirectReport(this);
   }
 }
 
